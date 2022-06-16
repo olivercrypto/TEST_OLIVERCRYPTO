@@ -1,4 +1,3 @@
-</html>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,16 +13,16 @@
         <div>
             <p>Wallet address: <span id="wallet-address"></span></p>
             <p>Supply<br>
-            Mars: <span id="mars-count"></span><br>
-            Hyperion: <span id="Hyperion-count"></span><br>
-            Erebus: <span id="Erebus-count"></span></p>
+            Bronze: <span id="bronze-count"></span><br>
+            Silver: <span id="silver-count"></span><br>
+            Gold: <span id="gold-count"></span></p>
 
             <label for="membership">Membership Level:</label>
 
             <select name="membership" id="membership">
-            <option value="1">Mars</option>
-            <option value="2">Hyperion</option>
-            <option value="3">Erebus</option>
+            <option value="1">Bronze</option>
+            <option value="2">Silver</option>
+            <option value="3">Gold</option>
             </select>
             <br>
             <label>Quantity</label><input type="number" name="quantity">
@@ -538,24 +537,24 @@
 
                     contract = new web3.eth.Contract(ABI, ADDRESS);
 
-                    let marscount = await contract.methods.minted(0).call();
-                    let marssupply = await contract.methods.supply(0).call();
-                    let Hyperioncount = await contract.methods.minted(1).call();
-                    let Hyperionsupply = await contract.methods.supply(1).call();
-                    let eresbuscount = await contract.methods.minted(2).call();
-                    let eresbussupply = await contract.methods.supply(2).call();
-                    document.getElementById('mars-count').textContent = marscount + " / " + marssupply;
-                    document.getElementById('Hyperion-count').textContent = Hyperioncount + " / " + Hyperionsupply;
-                    document.getElementById('eresbus-count').textContent = eresbuscount + " / " + eresbussupply;
-                    //console.log(marscount);
-                    //console.log(Hyperioncount);
-                    //console.log(eresbuscount);
+                    let bronzecount = await contract.methods.minted(0).call();
+                    let bronzesupply = await contract.methods.supply(0).call();
+                    let silvercount = await contract.methods.minted(1).call();
+                    let silversupply = await contract.methods.supply(1).call();
+                    let goldcount = await contract.methods.minted(2).call();
+                    let goldsupply = await contract.methods.supply(2).call();
+                    document.getElementById('bronze-count').textContent = bronzecount + " / " + bronzesupply;
+                    document.getElementById('silver-count').textContent = silvercount + " / " + silversupply;
+                    document.getElementById('gold-count').textContent = goldcount + " / " + goldsupply;
+                    //console.log(bronzecount);
+                    //console.log(silvercount);
+                    //console.log(goldcount);
 
                     document.getElementById('mint').onclick = async () => {
                         let tokenId = Number(document.querySelector("[name=membership]").value);
                         let quantity = Number(document.querySelector("[name=quantity]").value);
-                        let rate = Number(await contract.methods.rates(tokenId - 1).call());
-                        let totalAmount = rate * quantity;
+                        let mintRate = Number(await contract.methods.mintRates(tokenId - 1).call());
+                        let totalAmount = mintRate * quantity;
                         contract.methods.mint(tokenId, quantity).send({ from: account, value: String(totalAmount) });
                     }
 
@@ -568,3 +567,7 @@
         </script>
     </body>
 </html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
