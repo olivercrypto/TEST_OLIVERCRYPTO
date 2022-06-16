@@ -84,8 +84,8 @@ contract = new web3.eth.Contract(ABI, ADDRESS);
 document.getElementById('mint').onclick = async () => {
 var tokenId = Number(document.querySelector("[name=tokenId]").value);
 var amount = Number(document.querySelector("[name=amount]"));
-var mintRate = Number(await contract.methods.mintRate().call());
-var totalAmount = mintRate * amount;
+var rates = Number(await contract.methods.rates().call());
+var totalAmount = Rates * amount;
 contract.methods.mint(tokenId, amount).send({ from: account, value: String(totalAmount)});
 }
 }
