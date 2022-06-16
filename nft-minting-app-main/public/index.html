@@ -553,8 +553,8 @@
                     document.getElementById('mint').onclick = async () => {
                         let tokenId = Number(document.querySelector("[name=membership]").value);
                         let quantity = Number(document.querySelector("[name=quantity]").value);
-                        let mintRate = Number(await contract.methods.mintRates(tokenId - 1).call());
-                        let totalAmount = mintRate * quantity;
+                        let rates = Number(await contract.methods.rates(tokenId - 1).call());
+                        let totalAmount = rates * quantity;
                         contract.methods.mint(tokenId, quantity).send({ from: account, value: String(totalAmount) });
                     }
 
