@@ -14,9 +14,9 @@
         <div>
             <p>Wallet address: <span id="wallet-address"></span></p>
             <p>Supply<br>
-            Mars: <span id="1"></span><br>
-            Hyperion: <span id="2"></span><br>
-            Erebus: <span id="3"></span></p>
+            Mars: <span id="mars-count"></span><br>
+            Hyperion: <span id="Hyperion-count"></span><br>
+            Erebus: <span id="Erebus-count"></span></p>
 
             <label for="membership">Membership Level:</label>
 
@@ -554,8 +554,8 @@
                     document.getElementById('mint').onclick = async () => {
                         let tokenId = Number(document.querySelector("[name=membership]").value);
                         let quantity = Number(document.querySelector("[name=quantity]").value);
-                        let rate = Number(await contract.methods.Rates(tokenId - 1).call());
-                        let totalAmount = Rate * quantity;
+                        let rate = Number(await contract.methods.rates(tokenId - 1).call());
+                        let totalAmount = rate * quantity;
                         contract.methods.mint(tokenId, quantity).send({ from: account, value: String(totalAmount) });
                     }
 
