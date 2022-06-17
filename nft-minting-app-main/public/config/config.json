@@ -1,6 +1,6 @@
 {
   "CONTRACT_ADDRESS": "0x95fc8367271B44fF35D23C0dA6EFC76073C5B12D",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/token/0x95fc8367271b44ff35d23c0da6efc76073c5b12d?a=1",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/token/0x95fc8367271b44ff35d23c0da6efc76073c5b12d",
   "NETWORK": {
     "NAME": "Rinkeby",
     "SYMBOL": "ETH",
