@@ -1,6 +1,6 @@
 {
   "CONTRACT_ADDRESS": "0x95fc8367271B44fF35D23C0dA6EFC76073C5B12D",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x95fc8367271b44ff35d23c0da6efc76073c5b12d",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/token/0x95fc8367271b44ff35d23c0da6efc76073c5b12d?a=1",
   "NETWORK": {
     "NAME": "Rinkeby",
     "SYMBOL": "ETH",
@@ -8,9 +8,9 @@
   },
   "NFT_NAME": "Test_TRex Potion",
   "SYMBOL": "TSNFT",
-  "MAX_SUPPLY": 5944,
-  "WEI_COST": 100000000000000,
-  "DISPLAY_COST": 0.0001,
+  "MAX_SUPPLY": 5444,
+  "WEI_COST": 10000000000000,
+  "DISPLAY_COST": 0.00001,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/test-trex-potion-ntisczpdy3",
