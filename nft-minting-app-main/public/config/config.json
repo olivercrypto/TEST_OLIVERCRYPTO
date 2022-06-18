@@ -10,7 +10,7 @@
   "SYMBOL": "TSNFT",
   "MAX_SUPPLY": 5444,
   "WEI_COST": 10000000000000,
-  "DISPLAY_COST": 0.0001,
+  "DISPLAY_COST": 0.05,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/test-trex-potion-dqym2lofk3",
