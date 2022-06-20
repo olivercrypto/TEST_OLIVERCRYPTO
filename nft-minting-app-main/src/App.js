@@ -100,15 +100,9 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [mintAmount, setMintAmount] = useState(2);
-  const mint(uint256 id, uint256 amount) payable public {
-        require(id <= potions.length, "potion doesn't exist");
-        require(id > 0, "potion doesn't exist");
-        require(msg.value >= (amount * price), "not enough ether sent");
-        require(minted[id - 1] + amount <= potions[id - 1], "not enough supply");
-        _mint(msg.sender, id, amount, "");
-        minted[id - 1] += amount;
-    }; //test Aggiunta ID
+  const [mintAmount, setMintAmount] = useState(1);
+  const [mintID, setMintID] = useState(1);
+  const [mintPRICE, setMintPRICE] = useState(0,05); //test Aggiunta ID
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
