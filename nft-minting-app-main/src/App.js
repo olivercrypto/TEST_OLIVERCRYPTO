@@ -101,6 +101,7 @@ function App() {
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
+  const [mintid, setMintid] = useState(1);
 
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -366,7 +367,7 @@ function App() {
                           color: "var(--accent-text)",
                         }}
                       >
-                        {mintAmount}
+                        {minID}
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
